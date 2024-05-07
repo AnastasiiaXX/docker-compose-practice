@@ -1,0 +1,17 @@
+{
+  "name": "forCollegeBot",
+  "version": "1.0.0",
+  "description": "a telegram bot for a studying project",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "node": "index.js"
+  },
+  "author": "Anastasiia",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "node-telegram-bot-api": "0.40.0"
+  }
+}
