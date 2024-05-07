@@ -1,13 +1,23 @@
 import TelegramBot from 'node-telegram-bot-api';
 import axios from 'axios';
+// import dotenv from 'dotenv';
+import { configDotenv } from 'dotenv';
 
-const token = '7176506862:AAHDJhsgTVdKUUb3QA79FNLWWCZA0iBNLj8';
+configDotenv();
+
+const apiKey = process.env.OPENWEATHER_API_KEY;
+const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token, {polling: true});
+
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, `Привет! Я бот погоды. Чтобы получить погоду в вашем городе, просто напишите /weather <название города>. Например: /weather Moscow`);
+});
 
 bot.onText(/\/weather (.+)/, (msg, match) => {
     const chatId = msg.chat.id;
     const cityName = match[1];
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c6218e2abc755c9e981cdde0604aeba9`)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
        .then(response => {
             const weatherData = response.data;
             const temperatureCelsius = (weatherData.main.temp - 273.15).toFixed(2);

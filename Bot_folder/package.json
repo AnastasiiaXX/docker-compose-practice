@@ -1,5 +1,5 @@
 {
-  "name": "forCollegeBot",
+  "name": "weatherBot",
   "version": "1.0.0",
   "description": "a telegram bot for a studying project",
   "type": "module",
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "node-telegram-bot-api": "0.40.0"
   }
 }
