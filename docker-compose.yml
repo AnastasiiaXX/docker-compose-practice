@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  telegram-bot:
+    build: ./Bot_folder
+    ports:
+      - "3000:3000"
+    restart: always
+    env_file:
+      - Bot_folder/.env
+
+  server:
+    build: ./movies_list
+    ports:
+      - "3001:3000"
+    restart: always

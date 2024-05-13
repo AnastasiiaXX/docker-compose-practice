@@ -1,5 +1,5 @@
 {
-  "name": "nodejs_pr",
+  "name": "movies_list",
   "version": "1.0.0",
   "description": "a small node.js backend project to request a movies' list",
   "main": "index.js",

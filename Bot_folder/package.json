@@ -1,12 +1,13 @@
 {
-  "name": "weatherBot",
+  "name": "weather-bot",
   "version": "1.0.0",
   "description": "a telegram bot for a studying project",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "node": "index.js"
+    "node": "index.js",
+    "lint": "eslint ."
   },
   "author": "Anastasiia",
   "license": "ISC",
@@ -14,5 +15,8 @@
     "axios": "^1.6.8",
     "dotenv": "^16.4.5",
     "node-telegram-bot-api": "0.40.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.2.0"
   }
 }
